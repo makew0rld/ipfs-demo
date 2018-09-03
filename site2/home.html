@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>IPFS Demo 2</title>
+        <script type="text/javascript" src="{{ url_for('static', filename='socket.io.min.js') }}"></script>
+        <script>
+            var socket = io.connect('http://' + document.domain + ':' + location.port);
+            socket.on('connect', function() {
+                socket.emit('success', {data: 'I\'m connected!'});
+            });
+            socket.on('update', function() {
+                document.getElementById('iframe').src += '';
+            });
+        </script>
+    </head>
+    <body>
+        <h1>View Your Uploaded File</h1>
+        <iframe id="iframe" width="100%" src="http://localhost:8080{{ ipfs }}">
+            iframe failed. IDK
+        </iframe>
+    </body>
+</html>
