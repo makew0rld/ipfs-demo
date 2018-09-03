@@ -8,15 +8,18 @@
             var socket = io.connect('http://' + document.domain + ':' + location.port);
             socket.on('connect', function() {
                 socket.emit('success', {data: 'I\'m connected!'});
+                console.log("connected");
             });
-            socket.on('update', function() {
-                document.getElementById('iframe').src += '';
+            socket.on("update", function(msg) {
+                console.log("received update"); // XXX: change line below to not have a port
+                document.getElementById("iframe").src = 'http://' + document.domain + ':' + location.port + msg.data;
+                console.log(msg.data);
             });
         </script>
     </head>
     <body>
         <h1>View Your Uploaded File</h1>
-        <iframe id="iframe" width="100%" src="http://localhost:8080{{ ipfs }}">
+        <iframe id="iframe" width="100%" src="/">
             iframe failed. IDK
         </iframe>
     </body>
