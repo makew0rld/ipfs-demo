@@ -15,7 +15,7 @@
                 socket.emit("update", function(data) {
                     // callback
                     // XXX: change line below to not have a port
-                    document.getElementById("image").src = 'http://' + document.domain + ':8082' + data;
+                    document.getElementById("image").src = 'http://' + document.domain + ':8082' + data
                     console.log("Updated")
                 })
             }, 2000)
@@ -23,6 +23,6 @@
     </head>
     <body>
         <h1>View Your Uploaded File</h1>
-        <img id="image" width="100%" src="/">
+        <img id="image" style="max-width: 100%;max-height: calc( 100% - 40px );" src="/">
     </body>
 </html>
