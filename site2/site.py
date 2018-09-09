@@ -3,7 +3,6 @@
 from flask import Flask, render_template
 import subprocess
 from flask_socketio import SocketIO
-from time import sleep
 
 app = Flask(__name__, template_folder=".")
 app.config['SECRET_KEY'] = "demosocketkey"
@@ -18,7 +17,7 @@ def mainpage():
 
 @socketio.on("update")
 def update():
-    print("Started update func")
+    print(":: Started update func")
     # Hardcoded demo key, from the key file included in the repo
     ipfs = subprocess.run(["ipfs", "name", "resolve", "QmbfT8139rgMeKZdLDgz45zQQVzCuKnHRtzohuT5aqcRV8"],
                           stdout=subprocess.PIPE).stdout.decode('utf-8').strip()
@@ -28,4 +27,5 @@ def update():
 
 
 if __name__ == '__main__':
-    socketio.run(app)  # Runs the production eventlet server unless in dev mode
+    # Runs the production eventlet server unless in dev mode
+    socketio.run(app, port=6002, debug=True)

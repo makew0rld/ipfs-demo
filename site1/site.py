@@ -10,7 +10,7 @@ app = Flask(__name__, template_folder=".")
 
 # Setup file uploading
 UPLOAD_FOLDER = "/tmp/ipfs-demo"  # Linux specific
-ALLOWED_EXTENSIONS = set(["jpg", "png", "jpeg", "gif"])app
+ALLOWED_EXTENSIONS = set(["jpg", "png", "jpeg", "gif"])
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 # Max file size is 16 MB
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
@@ -64,6 +64,6 @@ def done():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=6001)
     # XXX production code
     #eventlet.wsgi.server(eventlet.listen(("/demo", 80)), app)
