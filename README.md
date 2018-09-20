@@ -14,6 +14,6 @@ A offline, mesh-networking demo of IPFS, originally for use by tomesh.net
 * Make it so the server doesn't have to respond to all the client requests at the same time
 
 ## Instead
-* Look at https://cryptpad.fr/code/#/2/code/view/yYtqDg-VjFcJ7QXZL5WNCnwK2H1RSuD-bbB3V9hb7X4/
+* Look at https://cryptpad.fr/code/#/2/code/view/cNX1Y33NqcL2yuWWeaqfJ5H5UgGWQvmt-z+xwqXeYvs/
 for instructions
 * Also look through code for XXX, ie things to change
