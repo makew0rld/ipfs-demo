@@ -29,5 +29,4 @@ def update():
 if __name__ == '__main__':
     # Runs the production eventlet server unless in debug mode
     # XXX: production server doesn't seem to work
-    # XXX: change port to 6001
-    socketio.run(app, port=6002, debug=True)
+    socketio.run(app, port=6001, debug=True)
