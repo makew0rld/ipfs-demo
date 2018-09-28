@@ -12,9 +12,8 @@ app = Flask(__name__, template_folder=".")
 UPLOAD_FOLDER = "/tmp/ipfs-demo"  # Linux specific
 ALLOWED_EXTENSIONS = set(["jpg", "png", "jpeg", "gif"])
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
-# Max file size is 16 MB
-# XXX - was causing Too Large errors with files within the limit
-#app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+# Max file size is 16 MB - must also be set within nginx
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 
 def allowed_file(filename):
