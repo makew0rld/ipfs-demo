@@ -15,7 +15,7 @@
                 socket.emit("update", function(data) {
                     // callback
                     // XXX: change line below to not have a port
-                    document.getElementById("image").src = 'http://' + document.domain + ':8082' + data
+                    document.getElementById("image").src = 'http://' + document.domain + data
                     console.log("Updated")
                 })
             }, 2000)
